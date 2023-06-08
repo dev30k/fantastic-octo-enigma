@@ -2,13 +2,10 @@ const mysql = require('mysql');
 
 // Create a connection pool
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'Lemuria123',
-    database: 'scrapper_systems',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+    host: "localhost",
+    user: "lemurian_twitter",
+    password: "Lemuria123",
+    database:"lemurian_scrapper_systems",
 });
 
 
