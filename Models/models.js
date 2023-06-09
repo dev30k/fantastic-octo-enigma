@@ -14,5 +14,20 @@ const createScrappedData = (tweetData) => {
         });
     });
 };
+const checkDuplicateData = (tweetData) => {
+    const {  username} = tweetData;
 
-module.exports = {createScrappedData}
+    const sql = `SELECT COUNT(*) AS count FROM tweets WHERE username = ?`;
+
+    return new Promise((resolve, reject) => {
+        db.query(sql, [username], (err, results) => {
+            if (err) {
+                reject(err);
+            }
+
+            resolve(results);
+        });
+    });
+};
+
+module.exports = {createScrappedData,checkDuplicateData}
